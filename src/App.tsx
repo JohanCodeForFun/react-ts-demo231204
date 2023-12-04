@@ -47,7 +47,7 @@ const App = () => {
     }
   ]
 
-  const items: Product[] = [
+  const products: Product[] = [
     {
       id: 2,
       title: "Hårtork",
@@ -69,15 +69,15 @@ const App = () => {
     <>
       <p>Välj produkt:</p>
       <ListSelect
-        items={items}
+        items={products}
         onClickItem={(item) => console.log('Du klickade på', item)} 
-        displayAttribute={'price' as keyof Product}
+        renderButtonText={(item) => `${item.title} - ${item.price} kr`}
         />
       <p>Välj kund:</p>
       <ListSelect
         items={customers}
         onClickItem={(item) => console.log('Du valde en kund:', item)}
-        displayAttribute={'name' as keyof Customer}
+        renderButtonText={(item) => item.name}
         />
     </>
   )
