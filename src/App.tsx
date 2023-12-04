@@ -4,83 +4,29 @@ import { Product } from './client/types';
 import { ProductList } from './ProductList';
 import { Title } from './Title';
 import { ListSelect } from './ListSelect';
+import Card from './Card';
 
 const App = () => {
-
-  // const [ products, setProducts ] = useState<Product[]>([]);
-  // const [ isLoading, setIsLoading ] = useState(false);
-
-  // useEffect(() => {
-    
-  //   const loadProducts = async () => {
-  //     setIsLoading(true);
-  //     const data = await getAllProducts();
-  //     setIsLoading(false);
-  //     setProducts(data);
-  //   }
-  //   loadProducts();
-  
-  // }, [])
-
-  // const onButtonClick = (event: any) => {
-    
-  //   console.log('Duklickade på knappen!');
-  // }
-
-  type Customer = {
-    id: number,
-    name: string
-  }
-
-  const customers: Customer[] = [
-    {
-      id: 1,
-      name: "Kalle"
-    },
-    {
-      id: 2,
-      name: "Eva"
-    },
-    {
-      id: 3,
-      name: "Nisse"
-    }
-  ]
-
-  const products: Product[] = [
-    {
-      id: 2,
-      title: "Hårtork",
-      price: 500
-    },
-    {
-      id: 3,
-      title: "Jacka",
-      price: 700
-    },
-    {
-      id: 4,
-      title: "Lampa",
-      price: 30
-    }
-  ]
-
-  return (
-    <>
-      <p>Välj produkt:</p>
-      <ListSelect
-        items={products}
-        onClickItem={(item) => console.log('Du klickade på', item)} 
-        renderButtonText={(item) => `${item.title} - ${item.price} kr`}
-        />
-      <p>Välj kund:</p>
-      <ListSelect
-        items={customers}
-        onClickItem={(item) => console.log('Du valde en kund:', item)}
-        renderButtonText={(item) => item.name}
-        />
-    </>
-  )
+  return <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
+    <Card>
+      <Card.Header>Kontaktinformation</Card.Header>
+      <Card.Body>
+        <ul>
+          <li>Jonatan</li>
+          <li>070-123 123 12</li>
+        </ul>
+      </Card.Body>
+    </Card>
+    <Card>
+      <Card.Header>Kontaktinformation</Card.Header>
+      <Card.Body>
+        <ul>
+          <li>Jonatan</li>
+          <li>070-123 123 12</li>
+        </ul>
+      </Card.Body>
+    </Card>
+  </div>
 }
 
 export default App;
