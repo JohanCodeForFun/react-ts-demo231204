@@ -35,7 +35,7 @@ const App = () => {
           <li>070-123 123 12</li>
           {usersList.map(user => 
             (
-              <li>{user.name.first} {user.name.last}</li>
+              <li key={user.name.last}>{user.name.first} {user.name.last}</li>
             )
           )}
         </ul>
@@ -49,7 +49,7 @@ const App = () => {
           <li>070-123 123 12</li>
           {productsList.map(product => 
             (
-              <li>{product.title} {product.price}</li>
+              <li key={product.id}>{product.title} {product.price}</li>
             )
           )}
         </ul>
