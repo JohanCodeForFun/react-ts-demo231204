@@ -8,7 +8,7 @@ type ListSelectProps<T> = {
 export const ListSelect = <T extends unknown>({ items, onClickItem, renderButtonText }: ListSelectProps<T>) => {
     return (<ul>
         {items.map((item, index) => (
-            <li>
+            <li key={index}>
                 <button onClick={() => onClickItem(item)}>{renderButtonText(item)}</button>
             </li>
         ))}
